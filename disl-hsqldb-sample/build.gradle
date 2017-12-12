@@ -30,15 +30,26 @@ targetCompatibility = 1.7
 
 mainClassName='org.disl.workflow.DislLauncher'
 
-repositories {	
+repositories {
+	mavenLocal()
 	mavenCentral()
+	//GEM System a.s. local repository,
+	//  set gemMavenUserRead and gemMavenPasswordRead in ~/.gradle/gradle.properties
+	//  Email sales@gemsystem.cz for credentials or build disl into your local maven repository. Use command in disl project: "gradle install"
+	maven {
+		credentials {
+			username gemMavenUserRead
+			password gemMavenPasswordRead
+		}
+		url "https://maven.gemsystem.cz/nexus/content/repositories/public/"
+	}
 }
 
 dependencies {
-	compile ('org.codehaus.groovy:groovy-all:2.3.10')
-	compile ('com.github.kaja78:disl:0.3.1')
-	testCompile ('junit:junit:4.12')
-	runtime ('org.hsqldb:hsqldb:2.3.2')
+	compile 'com.github.gemsystem:disl:1.2.1-SNAPSHOT'
+    testCompile 'junit:junit:4.12'
+	runtime 'org.hsqldb:hsqldb:2.3.2'
+	runtime 'org.slf4j:slf4j-simple:1.7.21'
 }
 
 license { 

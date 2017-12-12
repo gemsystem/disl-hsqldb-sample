@@ -1,1 +1,1 @@
-disl-hsqldb-sample org.disl.sample.dataModel.DeployDataModel
+disl-hsqldb-sample org.disl.sample.scripts.deploySample

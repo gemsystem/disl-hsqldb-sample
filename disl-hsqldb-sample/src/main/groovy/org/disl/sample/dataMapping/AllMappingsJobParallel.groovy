@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2017 Antonín Krotký <antoninkrotky@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -19,11 +19,14 @@
 package org.disl.sample.dataMapping
 
 import org.disl.sample.dataMapping.common.AbstractJob
+import org.disl.sample.dataMapping.common.AbstractParallelJob
 import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE
 
-class LoadTargetTables extends AbstractJob {
-	
-	LoadTargetTables() {
+class AllMappingsJobParallel extends AbstractParallelJob {
+
+	AllMappingsJobParallel() {
+		autoAddDependencies=true
+		openBrowser = true
 		addType(Load_R_EMPLOYEE)
 	}
 

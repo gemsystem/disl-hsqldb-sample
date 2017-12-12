@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -18,17 +18,24 @@
  */
 package org.disl.sample.scripts
 
-import org.disl.meta.Mapping
-import org.disl.sample.dataModel.source.*;
-import org.disl.sample.dataModel.target.*;
-import org.disl.sample.dataMapping.*;
-import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE;
-
+import org.disl.sample.dataMapping.AllMappingsJobParallel
+import org.disl.sample.dataMapping.AllMappingsJobSerial
+import org.disl.sample.dataMapping.target.DepartmentMySubquery
+import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE
 @BaseScript(org.disl.workflow.DislScript)
 import groovy.transform.BaseScript
 
+execute DepartmentMySubquery
 execute Load_R_EMPLOYEE
+
+//or:
+
+execute AllMappingsJobSerial
+
+//or:
+
+execute AllMappingsJobParallel
+
+//Results:
+
 traceQueryData(Load_R_EMPLOYEE)
-
-
-

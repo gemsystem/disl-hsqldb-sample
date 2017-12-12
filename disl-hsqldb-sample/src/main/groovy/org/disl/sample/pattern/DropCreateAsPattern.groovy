@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel H�bl <karel.huebl@gmail.com>.
+ * Copyright 2017 Antonín Krotký <antoninkrotky@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -16,19 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with Disl.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.disl.sample.pattern.step;
+package org.disl.sample.pattern
 
-import org.disl.meta.TableMapping
-import org.disl.pattern.ExecuteSQLScriptMappingStep
+import org.disl.pattern.MappingPattern
+import org.disl.sample.pattern.step.mapping.CreateTableAs
+import org.disl.sample.pattern.step.mapping.DropTable
 
-class InsertIntoTable extends ExecuteSQLScriptMappingStep {
-		String getCode() {
-			"""\
-INSERT INTO ${mapping.target.name}
-	(
-	${mapping.targetColumnNames.join(",\n\t")}				
-	)
-${mapping.SQLQuery}				
-"""
-		}
+class DropCreateAsPattern extends MappingPattern {
+	@Override
+	public void init() {
+		add DropTable
+		add CreateTableAs
 	}
+}

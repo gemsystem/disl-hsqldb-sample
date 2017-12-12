@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -21,19 +21,16 @@ package org.disl.sample.dataMapping.target
 import static org.disl.sample.dataMapping.library.ExpressionLibrary.*
 
 import org.disl.meta.ColumnMapping
-import org.disl.meta.MetaFactory
 import org.disl.sample.dataMapping.common.LoadTargetTableMapping
 import org.disl.sample.dataModel.source.EMPLOYEE
 import org.disl.sample.dataModel.target.R_EMPLOYEE
-import org.junit.Assert
-import org.junit.Test
 
 class Load_R_EMPLOYEE extends LoadTargetTableMapping {
 	
 	R_EMPLOYEE target
 	
 	EMPLOYEE emp
-	DepartmentSubquery dept
+	DepartmentMySubquery dept
 
 	ColumnMapping EMP_ID=e emp.ID
 	ColumnMapping EMP_NAME=e emp.NAME
@@ -41,8 +38,8 @@ class Load_R_EMPLOYEE extends LoadTargetTableMapping {
 	ColumnMapping DEPT_NAME=e dept.DEPARTMENT_NAME
 	ColumnMapping LOCATION=e emp.LOCATION
 	ColumnMapping SALARY=e emp.SALARY
-	ColumnMapping DEPT_AVG_SALARY=e dept.AVG_SALARY	
-		
+	ColumnMapping DEPT_AVG_SALARY=e dept.AVG_SALARY
+
 	@Override
 	public void initMapping() {
 		from emp

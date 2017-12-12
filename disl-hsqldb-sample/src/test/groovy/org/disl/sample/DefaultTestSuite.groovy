@@ -22,11 +22,10 @@ import junit.framework.JUnit4TestAdapter
 import junit.framework.TestSuite
 
 import org.disl.meta.Mapping
-import org.disl.meta.MetaFactory
 import org.disl.meta.Table
-import org.disl.sample.dataMapping.common.AbstractJob;
 import org.disl.sample.dataMapping.library.ExpressionLibrary
 import org.disl.workflow.ClassFinder
+import org.disl.workflow.Job
 import org.junit.runner.RunWith
 import org.junit.runners.AllTests
 
@@ -38,11 +37,11 @@ class DefaultTestSuite {
 	}
 
 	public static createTestSuite() {
-		def testClasses=[]		
-		ClassFinder cf=ClassFinder.createClassFinder(ExpressionLibrary)
-		testClasses.addAll cf.findNonAbstractTypes('org.disl.sample.dataMapping', Mapping)
-		testClasses.addAll cf.findNonAbstractTypes('org.disl.sample.dataModel', Table)
-		testClasses.addAll cf.findNonAbstractTypes('org.disl.sample', AbstractJob)
+		List<Class> testClasses=[]
+		ClassFinder cf=ClassFinder.createClassFinder('org.disl.sample')
+		testClasses.addAll cf.findNonAbstractTypes(Mapping)
+		testClasses.addAll cf.findNonAbstractTypes(Table)
+		testClasses.addAll cf.findNonAbstractTypes(Job)
 		testClasses.add ExpressionLibrary
 		
 		TestSuite suite = new TestSuite();

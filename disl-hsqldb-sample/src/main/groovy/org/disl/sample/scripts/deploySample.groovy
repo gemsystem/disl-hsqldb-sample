@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -18,17 +18,12 @@
  */
 package org.disl.sample.scripts
 
-import org.disl.meta.Mapping
-import org.disl.sample.dataModel.DeployDataModel;
-import org.disl.sample.dataModel.source.*;
-import org.disl.sample.dataModel.target.*;
-import org.disl.sample.dataMapping.*;
-
+import org.disl.meta.Context
+import org.disl.sample.dataModel.AllTableJob
+import org.disl.sample.pattern.DeployTargetTable
 @BaseScript(org.disl.workflow.DislScript)
 import groovy.transform.BaseScript
 
-execute (DeployDataModel)
-
-
-
-
+Context.getContext().setExecutionMode(DeployTargetTable.DEPLOY_EXECUTION_MODE)
+simulate AllTableJob
+execute AllTableJob

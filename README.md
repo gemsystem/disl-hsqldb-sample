@@ -2,8 +2,22 @@
 Sample project demonstrating basic features of DISL. Gradle is used as build tool.
 
 ## Instalation
+Set gemMavenUserRead and gemMavenPasswordRead in 
 ```
-git clone https://github.com/kaja78/disl-hsqldb-sample.git
+~/.gradle/gradle.properties
+```
+Email sales@gemsystem.cz for your credentials.
+
+or
+
+build disl into your local maven repository. Use: 
+```
+git clone https://github.com/gemsystem/disl.git
+gradle install
+```
+Continue with the sample project:
+```
+git clone https://github.com/gemsystem/disl-hsqldb-sample.git
 cd disl-hsqldb-sample/disl-hsqldb-sample
 gradle installDist
 ```

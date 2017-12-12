@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -18,7 +18,7 @@
  */
 package org.disl.sample.pattern
 
-import org.disl.sample.pattern.step.InsertSampleDataStep
+import org.disl.sample.pattern.step.table.InsertSampleDataStep
 
 class DeploySourceTable extends DeployTargetTable {
 
@@ -26,7 +26,7 @@ class DeploySourceTable extends DeployTargetTable {
 
 public void init() {
 	super.init()
-	add InsertSampleDataStep
+	add new InsertSampleDataStep(executionMode: DEPLOY_EXECUTION_MODE)
 }
 	
 

@@ -16,13 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with Disl.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.disl.sample.pattern.step;
+package org.disl.sample.dataMapping
 
-import org.disl.meta.TableMapping
-import org.disl.pattern.ExecuteSQLScriptMappingStep
+import org.disl.sample.dataMapping.common.AbstractJob
+import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE
 
-class TruncateTable extends ExecuteSQLScriptMappingStep{
-	String getCode() {
-		"TRUNCATE TABLE ${getMapping().target.name}"
+class AllMappingsJobSerial extends AbstractJob {
+	
+	AllMappingsJobSerial() {
+		autoAddDependencies=true
+		addType(Load_R_EMPLOYEE)
 	}
+
 }

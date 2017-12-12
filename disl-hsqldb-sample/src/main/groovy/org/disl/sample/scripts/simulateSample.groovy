@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -18,19 +18,10 @@
  */
 package org.disl.sample.scripts
 
-import org.disl.meta.Mapping
-import org.disl.sample.dataModel.DeployDataModel;
-import org.disl.sample.dataModel.source.*;
-import org.disl.sample.dataModel.target.*;
-import org.disl.sample.dataMapping.*;
-import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE;
-
+import org.disl.sample.dataMapping.AllMappingsJobSerial
+import org.disl.sample.dataModel.AllTableJob
 @BaseScript(org.disl.workflow.DislScript)
 import groovy.transform.BaseScript
 
-simulate DeployDataModel
-simulate Load_R_EMPLOYEE
-
-
-
-
+simulate AllTableJob
+simulate AllMappingsJobSerial

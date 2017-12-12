@@ -1,1 +1,1 @@
-disl-hsqldb-sample org.disl.sample.dataMapping.LoadTargetTables
+disl-hsqldb-sample org.disl.sample.scripts.loadSample

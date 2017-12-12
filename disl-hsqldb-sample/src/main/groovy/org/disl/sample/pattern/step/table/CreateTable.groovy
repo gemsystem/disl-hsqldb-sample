@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel H�bl <karel.huebl@gmail.com>.
+ * Copyright 2017 Antonín Krotký <antoninkrotky@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -16,20 +16,15 @@
  * You should have received a copy of the GNU General Public License
  * along with Disl.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.disl.sample.pattern
+package org.disl.sample.pattern.step.table;
 
-import org.disl.pattern.MappingPattern
-import org.disl.sample.dataMapping.common.LoadTargetTableMapping
-import org.disl.sample.pattern.step.mapping.InsertIntoTable
-import org.disl.sample.pattern.step.mapping.TruncateTable
+import org.disl.pattern.ExecuteSQLScriptTableStep;
 
-class TruncateInsertPattern extends MappingPattern<LoadTargetTableMapping> {
+class CreateTable extends ExecuteSQLScriptTableStep {
 
-	@Override
-	public void init() {
-		add TruncateTable
-		add InsertIntoTable
-	}
-
-
+    String getCode() {
+        """\
+CREATE TABLE ${table.name} (
+	${table.columnDefinitions.join(",\n\t")});"""
+    }
 }

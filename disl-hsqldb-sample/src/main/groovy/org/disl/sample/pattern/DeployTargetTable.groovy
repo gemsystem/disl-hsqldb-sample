@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hübl <karel.huebl@gmail.com>.
+ * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -20,16 +20,16 @@ package org.disl.sample.pattern
 
 import org.disl.pattern.TablePattern
 import org.disl.sample.dataModel.common.TargetTable;
-import org.disl.sample.pattern.step.CreateTable
-import org.disl.sample.pattern.step.DropTable
+import org.disl.sample.pattern.step.table.CreateTable
+import org.disl.sample.pattern.step.table.DropTable
 
 class DeployTargetTable extends TablePattern<TargetTable> {
 
-	
+	public static final String DEPLOY_EXECUTION_MODE="deploy"
 
 public void init() {
-	add DropTable
-	add CreateTable
+	add new DropTable(executionMode: DEPLOY_EXECUTION_MODE)
+	add new CreateTable(executionMode: DEPLOY_EXECUTION_MODE)
 }
 	
 

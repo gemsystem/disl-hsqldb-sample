@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel Hï¿½bl <karel.huebl@gmail.com>.
+ * Copyright 2017 Antonín Krotký <antoninkrotky@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -16,20 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with Disl.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.disl.sample.pattern
+package org.disl.sample.dataMapping.common
 
-import org.disl.pattern.MappingPattern
-import org.disl.sample.dataMapping.common.LoadTargetTableMapping
-import org.disl.sample.pattern.step.mapping.InsertIntoTable
-import org.disl.sample.pattern.step.mapping.TruncateTable
+import org.disl.workflow.Job
+import org.disl.workflow.ParallelJobReflectingDependencies
+import org.junit.Test
 
-class TruncateInsertPattern extends MappingPattern<LoadTargetTableMapping> {
+abstract class AbstractParallelJob extends ParallelJobReflectingDependencies {
 
-	@Override
-	public void init() {
-		add TruncateTable
-		add InsertIntoTable
+	@Test
+	void testSimulate() {
+		simulate()
 	}
-
-
 }

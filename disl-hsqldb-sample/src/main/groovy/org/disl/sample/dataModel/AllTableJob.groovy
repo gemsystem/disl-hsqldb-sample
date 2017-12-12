@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Karel H�bl <karel.huebl@gmail.com>.
+ * Copyright 2017 Antonín Krotký <antoninkrotky@gmail.com>.
  *
  * This file is part of disl.
  *
@@ -16,17 +16,17 @@
  * You should have received a copy of the GNU General Public License
  * along with Disl.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.disl.sample.pattern.step;
+package org.disl.sample.dataModel
 
-import org.disl.pattern.ExecuteSQLScriptTableStep;
+import org.disl.meta.Table
+import org.disl.sample.dataMapping.common.AbstractJob
+import org.disl.sample.dataModel.source.DEPARTMENT
+import org.disl.sample.dataModel.source.EMPLOYEE
 
-class DropTable extends ExecuteSQLScriptTableStep {
-
-	String getCode() {
-		"DROP TABLE ${table.name};"
+public class AllTableJob extends AbstractJob{
+	
+	public AllTableJob() {
+		addAll(Table)
 	}
 
-	DropTable() {
-		ignoreErrors=true
-	}
 }
