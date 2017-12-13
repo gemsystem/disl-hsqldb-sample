@@ -20,7 +20,6 @@ tag = "tags"
 role = "roles"
 schema = "schemas"
 package = "packages"
-perspective = "perspective"
 
 [[menu.main]]
 weight = 1
