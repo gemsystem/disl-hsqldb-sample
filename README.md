@@ -39,4 +39,4 @@ cd build/install/disl-hsqldb-sample/bin
 generateWiki.bat
 ```
 
-Read more about [wiki](wiki/).
+Read more about [wiki](disl-hsqldb-sample/wiki/).
