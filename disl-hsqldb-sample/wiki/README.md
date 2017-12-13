@@ -7,12 +7,18 @@ Wiki is generated using [Hugo](https://gohugo.io) tool.
     * Copy hugo-xxxxx.exe into  <smth>/Hugo/bin/hugo.exe
     * Add <smth>/Hugo/bin into the system path
 
+## Generate files from disl model
+Run groovy script
+```
+org.disl.sample.scripts.generateWiki
+```
+
 ## Run server
 
     cd wiki
     hugo server
-
-## Generate wiki
+    
+## Generate wiki (html)
 
     cd wiki
     hugo --baseURL [baseURL]
