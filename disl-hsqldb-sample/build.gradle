@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-	compile 'com.github.gemsystem:disl:1.2.1-SNAPSHOT'
+	compile 'com.github.gemsystem:disl:1.2.2-SNAPSHOT'
     testCompile 'junit:junit:4.12'
 	runtime 'org.hsqldb:hsqldb:2.3.2'
 	runtime 'org.slf4j:slf4j-simple:1.7.21'
@@ -65,4 +65,38 @@ task sourcesJar(type: Jar, dependsOn: classes) {
  
 artifacts {
 	archives sourcesJar
+}
+
+task generateWiki (type:JavaExec) {
+	main = 'generateWiki'
+	classpath = sourceSets.main.runtimeClasspath
+	jvmArgs '-Dwiki.root.dir=build/wiki'
+}
+
+task cleanWiki(type: Delete) {
+	delete 'build/wiki'
+}
+
+task syncWikiSource(type: Sync,dependsOn: 'cleanWiki') {
+	from 'wiki'
+	into 'build/wiki'
+}
+
+task copyGeneratedFiles(type: Copy, dependsOn: 'generateWiki') {
+	from 'disl-hsqldb-sample/build/wiki'
+	into 'build/wiki'
+}
+
+task hugo(type:Exec) {
+	workingDir = 'build/wiki'
+	commandLine 'hugo'
+
+	dependsOn syncWikiSource
+	dependsOn copyGeneratedFiles
+	tasks.findByName('copyGeneratedFiles').mustRunAfter 'syncWikiSource'
+}
+
+task deployWiki(type: Sync, dependsOn: hugo) {
+	from '/build/wiki/public'
+	into 'C:\\Apache\\htdocs'
 }

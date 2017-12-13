@@ -1,0 +1,54 @@
+{
+    "edges": [
+        {
+            "dashes": "false",
+            "title": null,
+            "from": "org.disl.sample.dataModel.source.EMPLOYEE",
+            "to": "org.disl.sample.dataMapping.target.Load_R_EMPLOYEE",
+            "color": "blue",
+            "label": "",
+            "arrows": "to"
+        },
+        {
+            "dashes": "false",
+            "title": null,
+            "from": "org.disl.sample.dataModel.source.EMPLOYEE",
+            "to": "org.disl.sample.dataMapping.target.DepartmentMySubquery",
+            "color": "blue",
+            "label": "",
+            "arrows": "to"
+        }
+    ],
+    "nodes": [
+        {
+            "level": 1,
+            "title": "",
+            "shape": "box",
+            "id": "org.disl.sample.dataModel.source.EMPLOYEE",
+            "color": "LightGrey",
+            "targetUrl": "/data-model/org/disl/sample/datamodel/source/employee",
+            "label": "EMPLOYEE",
+            "size": 25
+        },
+        {
+            "level": 0,
+            "title": "",
+            "shape": "ellipse",
+            "id": "org.disl.sample.dataMapping.target.Load_R_EMPLOYEE",
+            "color": "LightGreen",
+            "targetUrl": "/data-mapping/org/disl/sample/datamapping/target/load_r_employee",
+            "label": "Load_R_EMPLOYEE",
+            "size": 25
+        },
+        {
+            "level": 0,
+            "title": "",
+            "shape": "ellipse",
+            "id": "org.disl.sample.dataMapping.target.DepartmentMySubquery",
+            "color": "LightGreen",
+            "targetUrl": "/data-mapping/org/disl/sample/datamapping/target/departmentmysubquery",
+            "label": "DepartmentMySubquery",
+            "size": 25
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+languageCode = "en-us"
+title = "WIKI"
+baseurl = "http://localhost/"
+
+#uglyURLs = true
+#preserveTaxonomyNames = true
+
+
+buildDrafts = true
+theme = "crab"
+
+[params]
+description = "WIKI Sample."
+
+[permalinks]
+blog  = "/blog/:year/:month/:title/"
+
+[taxonomies]
+tag = "tags"
+role = "roles"
+schema = "schemas"
+package = "packages"
+
+[[menu.main]]
+weight = 1
+name = "Home"
+url = "/"
+
+[[menu.main]]
+weight = 2
+name = "Business glossary"
+identifier = "business-glossary"
+url = "/business-glossary/"
+    [[menu.main]]
+    parent = "business-glossary"
+    weight = 1
+    name = "Sample 1"
+    url = "/business-glossary/sample1/"
+
+[[menu.main]]
+weight = 3
+name = "Technical documentation"
+identifier = "technical-documentation"
+
+    [[menu.main]]
+    parent = "technical-documentation"
+    weight = 1
+    name = "DISL model"
+    identifier= "disl-model"
+
+        [[menu.main]]
+        parent = "disl-model"
+        weight = 1
+        name = "Perspectives"
+        url = "/perspective/"
+
+        [[menu.main]]
+        parent = "disl-model"
+        weight = 2
+        name = "Schemas"
+        url = "/schemas/"
+
+        [[menu.main]]
+        parent = "disl-model"
+        weight = 3
+        name = "Packages"
+        url = "/packages/"
+

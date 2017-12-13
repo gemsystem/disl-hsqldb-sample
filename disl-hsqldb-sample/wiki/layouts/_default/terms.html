@@ -1,0 +1,17 @@
+﻿{{ partial "header.html" . }}
+
+<section id="main">
+    <div>
+
+        <ul>
+            {{ $data := .Data }}
+            {{ range $key, $value := .Data.Terms.Alphabetical }}
+            <li><a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a> ({{ $value.Count }} records)</li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+
+
+
+{{ partial "footer.html" . }}

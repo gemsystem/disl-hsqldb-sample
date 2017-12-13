@@ -1,0 +1,13 @@
+
+[role1]
+name="Role 1"
+description="Description of role 1"
+adGroup="AD group role 1"
+adDescription="AD description of role 1"
+
+[role2]
+name="Role 2"
+description="Description of role 2"
+adGroup="AD group role 2"
+adDescription="AD description of role 2"
+

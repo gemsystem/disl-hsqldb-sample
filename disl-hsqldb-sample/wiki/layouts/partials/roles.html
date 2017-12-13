@@ -1,0 +1,5 @@
+<p class="tags">
+  Role: {{ range . }}
+  <a href="{{ "/roles/" | absURL }}{{ . | urlize | lower }}">{{ . }}</a>
+  {{ end }}
+</p>
