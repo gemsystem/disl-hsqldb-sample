@@ -32,3 +32,11 @@ gradle eclipse
 cd build/install/disl-hsqldb-sample/bin
 ```
 Start lightweight inmemory databse server `startDB.bat`, deploy sample data model using DISL job `deployDB.bat`, load target table using DISL job `loadDB.bat` and finally check data in database `startDbClient.bat`.
+
+## Generate wiki
+```
+cd build/install/disl-hsqldb-sample/bin
+generateWiki.bat
+```
+
+Read more about [wiki](wiki/).
