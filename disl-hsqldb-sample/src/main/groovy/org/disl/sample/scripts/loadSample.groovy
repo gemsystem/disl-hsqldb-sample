@@ -24,9 +24,11 @@ import org.disl.sample.dataMapping.target.DepartmentMySubquery
 import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE
 @BaseScript(org.disl.workflow.DislScript)
 import groovy.transform.BaseScript
+import org.disl.sample.dataMapping.target.Run_After_Load_R_EMPLOYEE
 
 execute DepartmentMySubquery
 execute Load_R_EMPLOYEE
+execute Run_After_Load_R_EMPLOYEE
 
 //or:
 

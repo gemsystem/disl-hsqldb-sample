@@ -20,12 +20,14 @@ package org.disl.sample.dataMapping
 
 import org.disl.sample.dataMapping.common.AbstractJob
 import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE
+import org.disl.sample.dataMapping.target.Run_After_Load_R_EMPLOYEE
 
 class AllMappingsJobSerial extends AbstractJob {
 	
 	AllMappingsJobSerial() {
 		autoAddDependencies=true
 		addType(Load_R_EMPLOYEE)
+		addType(Run_After_Load_R_EMPLOYEE)
 	}
 
 }

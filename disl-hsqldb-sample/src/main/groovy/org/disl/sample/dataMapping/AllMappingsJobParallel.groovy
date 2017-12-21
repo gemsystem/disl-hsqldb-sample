@@ -21,13 +21,14 @@ package org.disl.sample.dataMapping
 import org.disl.sample.dataMapping.common.AbstractJob
 import org.disl.sample.dataMapping.common.AbstractParallelJob
 import org.disl.sample.dataMapping.target.Load_R_EMPLOYEE
+import org.disl.sample.dataMapping.target.Run_After_Load_R_EMPLOYEE
 
 class AllMappingsJobParallel extends AbstractParallelJob {
 
 	AllMappingsJobParallel() {
 		autoAddDependencies=true
 		openBrowser = true
-		addType(Load_R_EMPLOYEE)
+		addTypes([Load_R_EMPLOYEE, Run_After_Load_R_EMPLOYEE])
 	}
 
 }
